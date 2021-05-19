@@ -31,7 +31,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
         AppCubit.get(context).deleteData(id: model["id"]);
       },
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(15.0),
         child: Row(
           children: [
             CircleAvatar(
@@ -42,6 +42,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
               width: 20,
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
@@ -53,11 +54,6 @@ Widget buildTaskItem(Map model, context) => Dismissible(
                   style: TextStyle(color: Colors.grey),
                 ),
               ],
-            ),
-            Expanded(
-              child: SizedBox(
-                width: 20,
-              ),
             ),
             IconButton(
                 icon: Icon(
