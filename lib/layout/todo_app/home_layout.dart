@@ -2,9 +2,9 @@ import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:todo_app/shared/cubit/cubit.dart';
-import 'package:todo_app/shared/cubit/states.dart';
-import 'package:todo_app/shared/widgets/default_form_field.dart';
+import 'package:todo_app/shared/components/defaults.dart';
+import 'package:todo_app/shared/cubit/todo_app/cubit.dart';
+import 'package:todo_app/shared/cubit/todo_app/states.dart';
 
 class HomeLayout extends StatelessWidget {
   var scaffoldKey = GlobalKey<ScaffoldState>();
