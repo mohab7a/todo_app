@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/shared/components/defaults.dart';
-import 'package:todo_app/shared/cubit/todo_app/cubit.dart';
-import 'package:todo_app/shared/cubit/todo_app/states.dart';
+import 'package:todo_app/shared/cubit/todo_app/todo_cubit.dart';
+import 'package:todo_app/shared/cubit/todo_app/todo_states.dart';
 
 class ArchivedScreen extends StatelessWidget {
   @override

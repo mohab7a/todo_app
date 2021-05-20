@@ -1,17 +1,17 @@
 import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:todo_app/shared/cubit/todo_app/cubit.dart';
+import 'package:flutter/painting.dart';
+import 'package:todo_app/shared/cubit/todo_app/todo_cubit.dart';
 
-Widget defaultFormField({
-  @required TextEditingController controller,
-  @required String label,
-  Function onChange,
-  Function onTap,
-  Function onSubmit,
-  @required Function validate,
-  @required IconData prefix,
-  @required TextInputType type,
-}) =>
+Widget defaultFormField(
+        {@required TextEditingController controller,
+        @required String label,
+        Function onChange,
+        Function onTap,
+        Function onSubmit,
+        @required Function validate,
+        @required IconData prefix,
+        @required TextInputType type}) =>
     TextFormField(
       onChanged: onChange,
       onTap: onTap,
@@ -55,6 +55,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
                 ),
               ],
             ),
+            Spacer(),
             IconButton(
                 icon: Icon(
                   Icons.check_circle,
@@ -77,6 +78,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
         ),
       ),
     );
+
 Widget tasksBuilder({@required List<Map> tasks}) => ConditionalBuilder(
       condition: tasks.length > 0,
       fallback: (context) => Center(
@@ -97,10 +99,16 @@ Widget tasksBuilder({@required List<Map> tasks}) => ConditionalBuilder(
       ),
       builder: (context) => ListView.separated(
           itemBuilder: (context, index) => buildTaskItem(tasks[index], context),
-          separatorBuilder: (context, index) => Container(
-                color: Colors.grey[300],
-                width: double.infinity,
-                height: 1,
-              ),
+          separatorBuilder: (context, index) =>
+              buildDivider(color: Colors.grey[200]),
           itemCount: tasks.length),
+    );
+
+Widget buildDivider({@required Color color}) => Padding(
+      padding: EdgeInsetsDirectional.only(start: 20),
+      child: Container(
+        height: 1,
+        width: double.infinity,
+        color: color,
+      ),
     );
