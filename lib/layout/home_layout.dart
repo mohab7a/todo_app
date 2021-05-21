@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:todo_app/shared/components/defaults.dart';
-import 'package:todo_app/shared/cubit/todo_app/todo_cubit.dart';
-import 'package:todo_app/shared/cubit/todo_app/todo_states.dart';
+import 'package:todo_app/shared/cubit/todo_cubit.dart';
+import 'package:todo_app/shared/cubit/todo_states.dart';
 
 class HomeLayout extends StatelessWidget {
   var scaffoldKey = GlobalKey<ScaffoldState>();

@@ -1,7 +1,7 @@
 import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:todo_app/shared/cubit/todo_app/todo_cubit.dart';
+import 'package:todo_app/shared/cubit/todo_cubit.dart';
 
 Widget defaultFormField(
         {@required TextEditingController controller,
